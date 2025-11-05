@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Monoton&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #1e1e2e; /* Darker background */
+            --card-bg: #282a36; /* Slightly lighter card background */
+            --text-color: #f8f8f2; /* Light text */
+            --accent-color: #bd93f9; /* Cute purple accent */
+            --highlight-color: #8be9fd; /* Cyan highlight */
+            --header-font: 'Monoton', cursive; /* EXCITING HEADER FONT */
+            --body-font: 'Balsamiq Sans', cursive; /* CUTE BODY FONT */
+        }
+        body { 
+            font-family: var(--body-font); 
+            margin: 0; 
+            padding: 40px; 
+            background-color: var(--dark-bg); 
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .dashboard { 
+            max-width: 650px; 
+            width: 100%;
+            padding: 30px; 
+            background-color: var(--card-bg); 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+            border: 2px solid var(--accent-color);
+        }
+        h1 { 
+            font-family: var(--header-font); /* Applied Monoton */
+            text-align: center; 
+            color: var(--highlight-color); 
+            margin-bottom: 30px;
+            font-size: 2.5em; /* Slightly larger */
+            text-shadow: 0 0 10px rgba(139, 233, 253, 0.7); /* More glow */
+            letter-spacing: 5px; /* Spacing out the exciting font */
+        }
+        .stat-box { 
+            margin: 25px 0; /* More spacing */
+            padding: 15px 20px; 
+            border-radius: 10px; /* More rounded */
+            background: linear-gradient(45deg, rgba(40, 42, 54, 0.9), rgba(40, 42, 54, 0.7));
+            border: 1px solid var(--accent-color);
+            transition: transform 0.2s;
+        }
+        .stat-box:hover {
+            transform: scale(1.02); /* Cute zoom on hover */
+            box-shadow: 0 6px 18px rgba(189, 147, 249, 0.4);
+        }
+        .stat-box p { 
+            margin: 0; 
+            font-size: 1.2em; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .stat-box strong { 
+            font-size: 2.0em; /* Even bigger number */
+            font-family: 'Balsamiq Sans', cursive; /* Use the cute font for numbers too */
+            font-weight: 700;
+            background: -webkit-linear-gradient(45deg, var(--highlight-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .footer {
+            text-align: center; 
+            margin-top: 40px; 
+            font-size: 0.9em;
+            color: rgba(248, 248, 242, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>✨ {{ title }} ✨</h1>
+        <div class="stat-box">
+            <p>
+                Total Movies Found 🍿
+                <strong>{{ total_movies }}</strong>
+            </p>
+        </div>
+        <div class="stat-box">
+            <p>
+                Average Rating ⭐
+                <strong>{{ avg_rating }}</strong>
+            </p>
+        </div>
+        <p class="footer">Powered by FastAPI and Postgres Psycopg2 🤫</p>
+    </div>
+</body>
+</html>
