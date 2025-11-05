@@ -4,10 +4,10 @@ A secure, data-rich dashboard built with FastAPI and PostgreSQL, leveraging envi
 
 ## Prerequisites
 
-Dependencies: Ensure you have all required Python packages installed:
+Dependencies: Install all required Python packages using the requirements.txt file:
 
 ```bash
-pip install fastapi uvicorn[standard] jinja2 psycopg2-binary python-dotenv pandas
+pip install -r requirements.txt
 ```
 
 Configuration: Create a file named `.env` in the root directory and add your PostgreSQL connection string:
